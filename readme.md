@@ -1,5 +1,7 @@
 Warning: The code is shitty. It's a 4h hackathon. Deal with it.
 
+Requirements: [node.js](http://nodejs.org/), `npm install`
+
 Manual:
 
 To activate: Set auctionraptor to channel operator status.
