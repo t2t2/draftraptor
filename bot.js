@@ -103,7 +103,7 @@ client.addListener('message'+channel, function (nick, text, message) {
 			newTopic = true;
 			client.say(channel, irc.colors.wrap('dark_red', 'Auction Started: '+activeAuction.text+' ('+nick+')'));
 		}
-		if(parts[0] == '!close' && admin) {
+		if((parts[0] == '!close' || parts[0] == '!ok') && admin) {
 			if(!activeAuction) return;
 			if(activeAuction.countdown) {
 				clearTimeout(activeAuction.countdown);
@@ -113,6 +113,8 @@ client.addListener('message'+channel, function (nick, text, message) {
 
 			newTopic = true;
 			client.say(channel, irc.colors.wrap('dark_blue', 'Auction Closed & Money Updated ('+nick+')'));
+
+			parts[0] = '!stats';
 		}
 		if(parts[0] == '!cancel' && admin) {
 			if(!activeAuction) return;
@@ -130,7 +132,7 @@ client.addListener('message'+channel, function (nick, text, message) {
 				client.say(channel, 'Team: '+teams[team].name+' ('+teams[team].players.join(', ')+') - '+teams[team].money);
 			}
 		}
-		if(parts[0] == '!bid') {
+		if(parts[0] == '!bid' || parts[0] == '!b') {
 			if(!players[nick]) {
 				return;
 			}
@@ -195,7 +197,7 @@ function resetCountdown () {
 
 	if(activeAuction.timed) {
 		if(activeAuction.countdown) {
-			if(activeAuction.timeExtension && activeAuction.timeLeft < activeAuction.timeExtension) {
+			if(activeAuction.timeExtension && activeAuction.timeLeft <= activeAuction.timeExtension) {
 				activeAuction.timeLeft += activeAuction.timeExtension;
 				client.say(channel, irc.colors.wrap('dark_blue', 'Last second sniper!')+' '+activeAuction.timeExtension+'s added!');
 			}
@@ -235,15 +237,15 @@ function resetCountdown () {
 	clearTimeout(activeAuction.countdown);
 	activeAuction.countdown = setTimeout(function () {
 		// Welcome to callback hell
-		client.say(channel, irc.colors.wrap('dark_red', 'Going once... ('+activeAuction.bestBidTeam.name+' for '+activeAuction.bestBid+')'));
+		client.say(channel, irc.colors.wrap('dark_red', '[10s] Going once... ('+activeAuction.bestBidTeam.name+' for '+activeAuction.bestBid+')'));
 
 		activeAuction.countdown = setTimeout(function () {
 			// Welcome to callback hell
-			client.say(channel, irc.colors.wrap('dark_red', 'Going twice... ('+activeAuction.bestBidTeam.name+' for '+activeAuction.bestBid+')'));
+			client.say(channel, irc.colors.wrap('dark_red', '[05s] Going twice... ('+activeAuction.bestBidTeam.name+' for '+activeAuction.bestBid+')'));
 
 			activeAuction.countdown = setTimeout(function () {
 				// Welcome to callback hell
-				client.say(channel, irc.colors.wrap('dark_red', 'Sold to '+activeAuction.bestBidTeam.name+' for '+activeAuction.bestBid));
+				client.say(channel, irc.colors.wrap('dark_red', '[00s] Sold to '+activeAuction.bestBidTeam.name+' for '+activeAuction.bestBid));
 				activeAuction.open = false;
 			}, 5000);
 		}, 5000);

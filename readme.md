@@ -11,7 +11,7 @@ Commands:
 Anyone +v or +o:
 
 * !stats - Outputs current teams and their money
-* !bid {amount} - Enters a bid for <amount>.
+* !bid {amount}  or  !b {amount} - Enters a bid for <amount>.
 
 (Fun fact "!bid 1 dollar, bob" works, as long as the number is first argument and clearly separated by space. Really anything can be 2+ arguments as long as first is a number)
 
@@ -21,5 +21,5 @@ Anyone +o:
 * !addplayer {team} {username} - Adds a player to a team, +v-ing them in process. Be careful with entry order.
 * !setmoney {team} {money} - Set's teams money.
 * !start {name} (countdown) (snipetime) - Starts an auction "name". If countdown is not set or 0 runs normal (once, twice, sold) auction, otherwise stops after countdown seconds. If snipetime is set, the time limit is extended by snipetime if time is lower than snipetime when a bid happens. Warning: name can't include spaces
-* !close - Closes auction and winning bid's bid is removed from their money.
+* !close  or  !ok - Closes auction and winning bid's bid is removed from their money. Warning: !close can be aliased to /chanserv close on some servers.
 * !cancel - Closes auction without taking money.
