@@ -4,7 +4,7 @@ Requirements: [node.js](http://nodejs.org/), `npm install`
 
 ## Manual:
 
-To activate: Set the connexted bot to channel operator status.
+To activate: Set the connected bot to channel operator status.
 
 ### Commands:
 
