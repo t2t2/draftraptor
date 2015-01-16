@@ -2,20 +2,20 @@ Warning: The code is shitty. It's a 4h hackathon. Deal with it.
 
 Requirements: [node.js](http://nodejs.org/), `npm install`
 
-Manual:
+## Manual:
 
-To activate: Set auctionraptor to channel operator status.
+To activate: Set the connexted bot to channel operator status.
 
-Commands:
+### Commands:
 
-Anyone +v or +o:
+#### Anyone +v or +o:
 
 * !stats - Outputs current teams and their money
 * !bid {amount}  or  !b {amount} - Enters a bid for <amount>.
 
 (Fun fact "!bid 1 dollar, bob" works, as long as the number is first argument and clearly separated by space. Really anything can be 2+ arguments as long as first is a number)
 
-Anyone +o:
+#### Anyone +o:
 
 * !addteam {team} (money) - Creates a team with name <team>. Optionally can be added how much money team will have in the beginning
 * !addplayer {team} {username} - Adds a player to a team, +v-ing them in process. Be careful with entry order.
