@@ -25,11 +25,11 @@ Instructions:
 * In case current version doesn't get automatically built: `./node_modules/.bin/gulp build:production`
 * Install database driver  
   ```
-  (from sequelize documentation http://sequelize.readthedocs.org/en/latest/docs/getting-started/ )
-  $ npm install --save pg pg-hstore
-  $ npm install --save mysql // For both mysql and mariadb dialects
-  $ npm install --save sqlite3
-  $ npm install --save tedious // MSSQL
+  (from sequelize documentation http://sequelize.readthedocs.org/en/latest/docs/getting-started/ )  
+  $ npm install --save pg pg-hstore  
+  $ npm install --save mysql // For both mysql and mariadb dialects  
+  $ npm install --save sqlite3  
+  $ npm install --save tedious // MSSQL  
   ```
 * Run server with `node server.js` + approtiate command line args:
     * `--debug` - Show dbug messages
