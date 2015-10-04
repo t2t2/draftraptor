@@ -32,6 +32,7 @@ if (config.tasks.js) {
 					{
 						test:   /\.vue$/,
 						loader: vue.withLoaders({
+							html: 'vue-html?-removeRedundantAttributes',
 							js: babelLoader,
 						}),
 					},
