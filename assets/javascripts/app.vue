@@ -21,7 +21,7 @@
 				</ul>
 			</div>
 			<div class="grid-content shrink footer">
-				Powered by Draftraptor - <a href="https://github.com/t2t2/draftraptor">github.com/t2t2/draftraptor</a>
+				Powered by Draftraptor - <a href="https://github.com/t2t2/draftraptor" target="_blank">github.com/t2t2/draftraptor</a>
 			</div>
 		</div>
 		<div class="grid-content medium-4">
