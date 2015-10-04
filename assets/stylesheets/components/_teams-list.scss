@@ -1,0 +1,41 @@
+.teams-list {
+	@extend ul.no-bullet;
+	@include grid-block(expand, vertical);
+	margin-left: -1px;
+	margin-right: -1px;
+
+	.team {
+		@include grid-block();
+		padding: rem-calc(6) rem-calc(10);
+
+		.team-dot {
+			align-self: center;
+		}
+		.name {
+			flex-grow: 1;
+			align-self: center;
+		}
+		.money {
+			font-size: 1.3rem;
+		}
+	}
+}
+.team-dot {
+	height: 1.5rem;
+	width: 1.5rem;
+
+	border-radius: 0.75rem;
+	margin-right: rem-calc(8);
+	vertical-align: middle;
+}
+
+@each $color-name, $color in $team-colors {
+	.team-color-#{$color-name} {
+		background-color: $color;
+	}
+}
+@each $color-name, $color in $team-colors-bg {
+	.team-background-#{$color-name} {
+		background-color: $color;
+	}
+}

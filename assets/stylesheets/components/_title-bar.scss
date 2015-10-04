@@ -1,0 +1,26 @@
+.title-bar {
+	.material-icons {
+		line-height: rem-calc(16);
+		vertical-align: bottom;
+	}
+	.button {
+		$overhang: (nth($button-padding, 2) * 2);
+
+		height: 3 * $titlebar-padding;
+		margin: -$titlebar-padding 0;
+		padding-top: $titlebar-padding;
+		padding-bottom: $titlebar-padding;
+		vertical-align: bottom;
+	}
+	.connection {
+		&.connected {
+			color: lighten($success-color, 30%);
+		}
+		&.connecting {
+			color: lighten($warning-color, 10%);
+		}
+		&.disconnected {
+			color: lighten($alert-color, 10%);
+		}
+	}
+}

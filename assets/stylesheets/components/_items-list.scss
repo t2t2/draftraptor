@@ -1,0 +1,22 @@
+.items-list {
+	@extend ul.no-bullet;
+	@include grid-block(expand, vertical);
+	margin-left: -1px;
+	margin-right: -1px;
+
+	.item {
+		@include grid-block();
+		padding: rem-calc(6) rem-calc(10);
+
+		.team-dot {
+			align-self: center;
+		}
+		.name {
+			flex-grow: 1;
+			align-self: center;
+		}
+		.money {
+			font-size: 1.3rem;
+		}
+	}
+}

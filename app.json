@@ -1,0 +1,15 @@
+{
+	"name": "Draftraptor",
+	"description": "Helps you auction off items in fantasy auctions",
+	"repository": "https://github.com/t2t2/draftraptor",
+	"image": "heroku/nodejs",
+	"addons": [
+		"heroku-postgresql:hobby-dev"
+	],
+	"env": {
+		"ADMIN_PASSWORD": {
+			"description": "Password that can be used by admin user to log in.",
+			"required": true
+		}
+	}
+}

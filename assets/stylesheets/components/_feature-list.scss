@@ -1,0 +1,32 @@
+.feature-list {
+	@extend ul.no-bullet;
+	@include grid-block(expand, vertical);
+	margin-left: -1px;
+	margin-right: -1px;
+
+	& > li {
+		@include grid-block();
+	}
+
+	.text, .value {
+		display: block;
+		flex: 0 0 50%;
+		line-height: 1.5;
+		padding: 0.25em $block-padding;
+	}
+
+	.text {
+		background-color: $primary-color;
+		border-top: 1px solid smartscale($primary-color, 10%);
+		color: isitlight($primary-color);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.value {
+		$bgc: lighten($primary-color, 50%);
+		background-color: $bgc;
+		border-top: 1px solid smartscale($bgc, 10%);
+		color: isitlight($bgc);
+	}
+}
