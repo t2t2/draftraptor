@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server",
-    "postinstall": "gulp build:production"
+    "postinstall": "./node_modules/.bin/gulp build:production"
   },
   "dependencies": {
     "babel-core": "^5.8.25",
