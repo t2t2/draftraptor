@@ -26,6 +26,10 @@
 				<li v-for="session in adminSessions" track-by="id" v-text="session.username"></li>
 			</ul>
 		</div>
+		<div class="footer">
+			Powered by Draftraptor 2016<br />
+			<a href="https://github.com/t2t2/draftraptor" target="_blank">github.com/t2t2/draftraptor</a>
+		</div>
 	</div>
 </template>
 
