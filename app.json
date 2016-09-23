@@ -14,6 +14,10 @@
 		"ADMIN_PASSWORD": {
 			"description": "Password that can be used by admin user to log in.",
 			"required": true
+		},
+		"SECRET_KEY": {
+			"description": "Enter a random string to increase security",
+			"generator": "secret"
 		}
 	}
 }
