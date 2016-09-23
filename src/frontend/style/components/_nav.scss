@@ -1,0 +1,6 @@
+.nav {
+	&.is-primary {
+		background-color: lighten($primary, 10%);
+		color: #fff;
+	}
+}

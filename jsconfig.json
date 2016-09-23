@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"experimentalDecorators": true,
+		"module": "es6"
+	},
+	"exclude": [
+		"node_modules"
+	]
+}

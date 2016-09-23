@@ -1,0 +1,72 @@
+.tile {
+	min-height: auto;
+	&.is-ancestor.box {
+		padding: 0;
+	}
+	&.is-scrolling {
+		overflow-y: auto;
+		flex-shrink: 1;
+	}
+	&.is-frame {
+		display: flex;
+		height: 100vh;
+
+		.tile {
+			position: relative;
+			overflow: hidden;
+		}
+
+		/*
+		.tile:not(.is-vertical) > .tile {
+			overflow-x: auto;
+		}
+		*/
+		.tile.is-vertical {
+			align-items: stretch;
+		}
+		.tile.is-vertical > .tile {
+			overflow-y: auto;
+		}
+		.tile.is-scrolling {
+			overflow-y: auto;
+		}
+	}
+	& > .tile.is-child.is-marginless:not(:last-child) {
+		margin: 0 !important;
+	}
+	@for $i from 1 through 12 {
+		&.is-offset-#{$i} {
+			margin-left: ($i / 12) * 100%;
+		}
+	}
+	&.is-align-right {
+		justify-content: right;
+	}
+	&.is-align-center {
+		justify-content: center;
+	}
+	&.is-align-justify {
+		justify-content: space-between;
+	}
+	&.is-align-spaced {
+		justify-content: space-around;
+	}
+	&.is-xalign-start {
+		align-items: flex-start;
+	}
+	&.is-xalign-end {
+		align-items: flex-end;
+	}
+	&.is-xalign-center {
+		align-items: center;
+	}
+	&.is-xalign-baseline {
+		align-items: baseline;
+	}
+	&.is-xalign-stretch {
+		align-items: stretch;
+	}
+	&.is-narrow {
+		flex: none;
+	}
+}

@@ -1,0 +1,12 @@
+.columns {
+	&.is-sidepadded {
+		margin-left: 0;
+		margin-right: 0;
+		& > .column:first-child {
+			padding-left: 0;
+		}
+		& > .column:last-child {
+			padding-right: 0;
+		}
+	}
+}

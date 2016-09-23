@@ -1,0 +1,51 @@
+@mixin vue-mui-transitions {
+	// Slide
+	.slide-down       { @include vue-mui-slide(up); }
+	.slide-down-fade  { @include vue-mui-slide(up, $fade: true); }
+	.slide-left       { @include vue-mui-slide(right); }
+	.slide-left-fade  { @include vue-mui-slide(right, $fade: true); }
+	.slide-up         { @include vue-mui-slide(down); }
+	.slide-up-fade    { @include vue-mui-slide(down, $fade: true); }
+	.slide-right      { @include vue-mui-slide(left); }
+	.slide-right-fade { @include vue-mui-slide(left, $fade: true); }
+
+	// Fade
+	.fade { @include vue-mui-fade() }
+
+	// Hinge
+	.hinge-from-top       { @include vue-mui-hinge(top); }
+	.hinge-from-right     { @include vue-mui-hinge(right); }
+	.hinge-from-bottom    { @include vue-mui-hinge(bottom); }
+	.hinge-from-left      { @include vue-mui-hinge(left); }
+	.hinge-from-middle-x  { @include vue-mui-hinge(top,   center); }
+	.hinge-from-middle-y  { @include vue-mui-hinge(right, center); }
+
+	// Scale
+	.scale-up    { @include vue-mui-zoom(0.5, 1); }
+	.scale-down  { @include vue-mui-zoom(1.5, 1); }
+
+	// Spin
+	.spin      { @include vue-mui-spin(cw); }
+	.spin-ccw  { @include vue-mui-spin(ccw); }
+
+	// Transition Modifiers
+	// - - - - - - - - - - - - - - -
+
+	@each $name, $value in $motion-ui-speeds {
+		@if $name != default {
+			.#{$name} { transition-duration: $value !important; }
+		}
+	}
+
+	@each $name, $value in $motion-ui-easings {
+		@if $name != default {
+			.#{$name} { transition-timing-function: $value !important; }
+		}
+	}
+
+	@each $name, $value in $motion-ui-delays {
+		@if $name != default {
+			.#{$name}-delay { transition-delay: $value !important; }
+		}
+	}
+}

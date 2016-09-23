@@ -1,0 +1,23 @@
+.full-table {
+	width: 100%;
+}
+
+.table-form {
+	& > thead > tr > th {
+		padding-bottom: 0.25rem;
+	}
+	
+	& > tbody {
+		& > tr > td {
+			padding: 0.25rem 0.5rem;
+		}
+	}
+	
+	input, select, button {
+		margin-bottom: 0;
+	}
+	button {
+		margin-top: 0;
+		margin-right: 0;
+	}
+}

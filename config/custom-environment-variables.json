@@ -1,0 +1,9 @@
+{
+	"database": {
+		"url": "DATABASE_URL"
+	},
+	"debug": "DEBUG",
+	"key": "SECRET_KEY",
+	"password": "ADMIN_PASSWORD",
+	"port": "PORT"
+}

@@ -1,0 +1,13 @@
+.items {
+	display: block;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	.item-wrap {
+		flex: 0 25%;
+		padding: 5px;
+		width: 25%;
+	}
+	.item {
+		width: 100%;
+	}
+}

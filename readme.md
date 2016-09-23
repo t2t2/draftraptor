@@ -13,7 +13,7 @@ process. But you don't need to worry about it if you use the free tier.
 
 Reqs:
 
-* node (> v4 preferred)
+* node (> v6 preferred)
 
 Optional:
 
@@ -22,19 +22,18 @@ Optional:
 Instructions:
 
 * `npm install` (include `--dev` for development dependencies)
-* In case current version doesn't get automatically built: `./node_modules/.bin/gulp build:production`
+* In case current version doesn't get automatically built: `npm run build`
 * Install database driver  
   (from sequelize documentation http://sequelize.readthedocs.org/en/latest/docs/getting-started/ )  
-  `$ npm install --save pg pg-hstore`  
-  `$ npm install --save mysql // For both mysql and mariadb dialects`  
-  `$ npm install --save sqlite3`  
-  `$ npm install --save tedious // MSSQL`
-* Run server with `node server.js` + approtiate command line args:
-    * `--debug` - Show dbug messages
-    * `--password={code}` - Admin access code
-    * `-p {port}` - Port to run the app on
+  `$ npm install pg pg-hstore`  
+  `$ npm install mysql // For both mysql and mariadb dialects`  
+  `$ npm install sqlite3`  
+  `$ npm install tedious // MSSQL`
+* Configure by creating config/local.json and setting values to what you wish.
+* Migrate database with `npm run migrate`
+* Run server with `npm start`
 
 Development mode:
 
-* Run `./node_modules/.bin/gulp` (or if gulp is installed globally just `gulp`)
+* Run `npm run dev` (or if gulp is installed globally just `gulp`)
 

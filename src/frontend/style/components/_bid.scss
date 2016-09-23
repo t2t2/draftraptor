@@ -1,0 +1,12 @@
+.bid {
+	padding: 1em;
+
+	&:not(:last-child) {
+		margin-bottom: 0;
+	}
+
+	.bid-right {
+		flex: 1 0 auto;
+		margin-left: 1em;
+	}
+}

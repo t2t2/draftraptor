@@ -1,0 +1,11 @@
+.control {
+	&.has-addons {
+		.button,
+		.input,
+		.select {
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}

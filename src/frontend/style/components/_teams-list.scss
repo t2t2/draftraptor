@@ -1,0 +1,100 @@
+.team-list {
+	@include tablet() {
+		align-items: stretch;
+		display: flex;
+		height: 40vh;
+		max-height: 16rem;
+		overflow-x: auto;
+	}
+}
+
+.team-box {
+	@include tablet() {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 auto;
+		min-width: 150px;
+	}
+
+	.team-box-header {
+		display: flex;
+		font-weight: bold;
+		padding: 6px 10px;
+		width: 100%;
+	}
+	.team-name {
+		flex: 0 1 auto;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.team-money {
+		flex: 1 0 auto;
+		margin-left: 10px;
+		min-width: 0;
+		text-align: right;
+	}
+	.team-money-progress {
+		border-radius: 0;
+		margin-bottom: 0;
+		&::-webkit-progress-value {
+			transition: width 1s;
+		}
+		&::-moz-progress-bar {
+			transition: width 1s;
+		}
+	}
+	.team-sessions {
+		@include mobile {
+			display: none;
+		}
+		border-top: 1px solid rgba(255, 255, 255, 0.2);
+		flex: 1 1 0;
+		padding: 0.5rem 10px;
+		overflow-y: auto;
+		min-height: 0;
+		max-height: 4rem;
+	}
+	.team-items {
+		@include mobile {
+			display: none;
+		}
+		flex: 3 1 0;
+		padding: 10px;
+		overflow-y: auto;
+	}
+}
+
+@each $color-name, $colors in $team-colors {
+	$color: map-get($colors, 'main');
+	$background-color: map-get($colors, 'background');
+
+	.team-background-#{$color-name}, .select .team-background-#{$color-name} {
+		background-color: $background-color;
+		&.is-hoverable {
+			transition: background-color 0.2s;
+			&:hover {
+				background-color: darken($background-color, 5%);
+			}
+		}
+	}
+	.team-box-color-#{$color-name} {
+		color: darken($color, 20%);
+		background-color: $background-color;
+	}
+	.team-color-#{$color-name}, .select .team-color-#{$color-name} {
+		background-color: $color;
+	}
+	.team-progress-color-#{$color-name} {
+		background-color: lighten($background-color, 5%);
+		&::-webkit-progress-bar {
+			background-color: lighten($background-color, 5%);
+		}
+		&::-webkit-progress-value {
+			background-color: $color;
+		}
+		&::-moz-progress-bar {
+			background-color: $color;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+.screen-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+}
+.screen {
+	background-color: #fff;
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	margin: 10px 10px 0;
+	overflow-y: auto;
+}

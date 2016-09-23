@@ -1,0 +1,24 @@
+.sidebar {
+	background-color: lighten($primary, 45%);
+
+	.settings {
+		margin-bottom: 0;
+
+		tr {
+			background-color: lighten($primary, 42%);
+		}
+		tr:nth-child(2n) {
+			background-color: lighten($primary, 40%);
+		}
+		th, td {
+			border-color: lighten($primary, 45%);
+		}
+	}
+	.sessions {
+		padding: 10px;
+
+		.sessions-list {
+			margin-top: 5px;
+		}
+	}
+}

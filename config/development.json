@@ -1,0 +1,12 @@
+{
+	"database": {
+		"options": {
+			"client": "sqlite3",
+			"connection": {
+				"filename": "./database/database.sqlite"
+			}
+		}
+	},
+	"debug": "*,-engine*,-express:application,-express:router:*,-feathers-authentication:*,-feathers-socket-commons:methods,-follow-redirects,-knex:client,-knex:pool,-socket.io*",
+	"key": "AlrightIllLetYouPassForThisTimeButPleaseMakeAMoreSecureKeyOkayOkay"
+}

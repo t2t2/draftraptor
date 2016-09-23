@@ -1,0 +1,20 @@
+.modal {
+	&-content {
+		&.is-wide {
+			@include tablet {
+				max-width: 960px;
+				margin: 0 20px;
+				width: 100%;
+			}
+		}
+		&.is-fullscreen {
+			height: 100%;
+		}
+		& > .tile.is-ancestor {
+			margin: 0;
+		}
+		& > .tile.is-frame {
+			max-height: 100%;
+		}
+	}
+}

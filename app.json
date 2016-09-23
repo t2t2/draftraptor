@@ -6,6 +6,10 @@
 	"addons": [
 		"heroku-postgresql:hobby-dev"
 	],
+	"success_url": "/",
+	"scripts": {
+		"postdeploy": "npm run migrate"
+	},
 	"env": {
 		"ADMIN_PASSWORD": {
 			"description": "Password that can be used by admin user to log in.",

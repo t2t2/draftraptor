@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Draftraptor</title>
+
+	{% if not dev %}
+	{# Let webpack take the wheel when in dev mode #}
+	<link rel="stylesheet" href="{{ '/assets/main.css' | asset }}" />
+	{% endif %}
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+	<div id="loading">
+		<p>Loading core...</p>
+		<noscript>
+			<p>Please enable javascript!</p>
+		</noscript>
+	</div>
+	
+	<app></app>
+
+	<script>
+		if (!window.Promise) { document.write('<script src="{{ '/assets/polyfill.js' | asset }}"><\/script>'); }
+	</script>
+	<script src="{{ '/assets/main.js' | asset }}"></script>
+</body>
+
+</html>

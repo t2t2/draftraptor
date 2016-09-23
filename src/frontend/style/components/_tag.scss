@@ -1,0 +1,32 @@
+.tag {
+	.button {
+		margin-left: 4px;
+		margin-right: 4px;
+
+		& + .button {
+			margin-left: 0;
+		}
+
+		&:first-child {
+			border-radius: 290486px 0 0 290486px;
+			margin-left: -10px;
+			padding-left: 8px;
+		}
+		&:last-child {
+			border-radius: 0 290486px 290486px 0;
+			margin-right: -10px;
+			padding-right: 8px;
+		}
+	}
+	.icon {
+		margin-left: 4px;
+		margin-right: 4px;
+
+		&:first-child {
+			margin-left: -6px;
+		}
+		&:last-child {
+			margin-right: -6px;
+		}
+	}
+}

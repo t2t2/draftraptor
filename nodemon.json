@@ -1,0 +1,4 @@
+{
+	"watch": ["config/*.*", "src/**/*.*", ".babelrc"],
+	"ignore": ["src/frontend/**/*.*", "src/public/**/*.*", "src/views/**/*.*"]
+}

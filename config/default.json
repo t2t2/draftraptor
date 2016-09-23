@@ -1,0 +1,10 @@
+{
+	"database": {
+		"url": null,
+		"options": {}
+	},
+	"debug": false,
+	"key": "ohgodfortheloveofthegodpleasechangemetoamoresecurestringokayokay",
+	"password": null,
+	"port": 8000
+}

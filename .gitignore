@@ -1,7 +1,19 @@
-.DS_Store
-.sass-cache
-database/database.sqlite
+# Logs
+npm-debug.log*
+
+# Dependency directories
 node_modules
-public/*
-config.json
-npm-debug.log
+
+# Local config
+config/local.json
+.vscode
+
+# Public files
+src/public/*
+!src/public/.gitkeep
+
+# Dev only
+database/database.sqlite
+
+# Built files
+build

@@ -1,0 +1,10 @@
+.control {
+	&.is-horizontal {
+		.control-label {
+			@include tablet {
+				// Give it a width so it looks good
+				width: 125px;
+			}
+		}
+	}
+}
