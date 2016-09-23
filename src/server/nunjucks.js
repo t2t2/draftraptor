@@ -6,7 +6,7 @@ import config from '../config'
 
 const debug = makeDebug('nunjucks')
 
-const manifestLocation = path.join(__dirname, '../../public/rev-manifest.json')
+const manifestLocation = path.join(__dirname, '../public/manifest.json')
 
 export default function () {
 	const app = this
