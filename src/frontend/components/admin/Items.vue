@@ -7,8 +7,9 @@
 			<table class="table is-narrow is-marginless">
 				<colgroup>
 					<col style="width:5%">
-					<col style="width:50%">
 					<col style="width:40%">
+					<col style="width:20%">
+					<col style="width:30%">
 					<col style="width:2%">
 				</colgroup>
 				<thead>
@@ -16,6 +17,7 @@
 						<th>ID</th>
 						<th>Name</th>
 						<th>Sold For</th>
+						<th>Team</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -30,6 +32,23 @@
 						<td>
 							<p class="control">
 								<input type="number" class="input" :value="item.sold" @input="updateItem(item.id, 'sold', $event) | debounce 500" />
+							</p>
+						</td>
+						<td>
+							<p class="control">
+								<span class="select is-fullwidth">
+									<select
+										:value="item.team_id || 0"
+										@change="updateItem(item.id, 'team_id', $event)">
+										<option :value="0">(No Team)</option>
+										<option
+											v-for="team in teams"
+											:value="team.id"
+											:class="'team-color-' + team.color">
+											{{ team.name }}
+										</option>
+									</select>
+								</span>
 							</p>
 						</td>
 						<td>
@@ -98,10 +117,16 @@
 			},
 			async updateItem(id, field, e) {
 				this.errors = null
-				
+				let value = e.target.value
+
+				// hack for no team
+				if (field === 'team_id' && value == 0) {
+					value = null
+				}
+
 				try {
 					await this.$service('api/items').patch(id, {
-						[field]: e.target.value
+						[field]: value
 					})
 				} catch(error) {
 					e.target.value = this.items[id][field]
