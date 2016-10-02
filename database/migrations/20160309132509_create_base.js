@@ -21,7 +21,7 @@ export async function up(knex) {
 	await knex.schema.createTable('items', table => {
 		table.increments('id')
 		table.string('name')
-		table.integer('team_id').references('id').inTable('teams').onUpdate('CASCADE').onDelete('SET NULL')
+		table.integer('team_id').nullable().unsigned().references('id').inTable('teams').onUpdate('CASCADE').onDelete('SET NULL')
 		table.integer('sold')
 		table.dateTime('start_time')
 		table.dateTime('min_end_time')
@@ -30,15 +30,15 @@ export async function up(knex) {
 
 	await knex.schema.createTable('bids', table => {
 		table.increments('id')
-		table.integer('item_id').references('id').inTable('items').onUpdate('CASCADE').onDelete('CASCADE')
-		table.integer('team_id').references('id').inTable('teams').onUpdate('CASCADE').onDelete('CASCADE')
+		table.integer('item_id').unsigned().references('id').inTable('items').onUpdate('CASCADE').onDelete('CASCADE')
+		table.integer('team_id').unsigned().references('id').inTable('teams').onUpdate('CASCADE').onDelete('CASCADE')
 		table.integer('amount')
 		table.dateTime('bid_time')
 		table.timestamps()
 	})
 
 	await knex.schema.table('settings', table => {
-		table.integer('item_id').nullable().references('id').inTable('items').onUpdate('CASCADE').onDelete('SET NULL')
+		table.integer('item_id').unsigned().nullable().references('id').inTable('items').onUpdate('CASCADE').onDelete('SET NULL')
 	})
 
 	await knex('settings').insert({
