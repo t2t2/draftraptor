@@ -12,7 +12,7 @@ export async function up(knex) {
 	await knex.schema.createTable('teams', table => {
 		table.increments('id')
 		table.string('name')
-		table.string('auth_key').unique()
+		table.string('auth_key', 128).unique()
 		table.string('color').defaultTo('white')
 		table.integer('money')
 		table.timestamps()
