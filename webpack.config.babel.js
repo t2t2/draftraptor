@@ -38,29 +38,29 @@ export default function ({
 				{
 					// Vue files
 					test: /\.vue$/,
-					loader: 'vue'
+					loader: 'vue-loader'
 				},
 				{
 					// JS
 					test: /\.js$/,
 					exclude: /node_modules/,
-					loader: 'babel'
+					loader: 'babel-loader'
 				},
 				{
 					// Sass
 					test: /\.scss$/,
 					// Disable sass minification so css-loader handles it
-					loader: prod ? ExtractTextPlugin.extract(['css', 'sass?outputStyle=nested']) : ['style', 'css', 'sass']
+					loader: prod ? ExtractTextPlugin.extract(['css-loader', 'sass-loader?outputStyle=nested']) : ['style-loader', 'css-loader', 'sass-loader']
 				},
 				{
 					// JaaaaSON
 					test: /\.json$/,
-					loader: 'json'
+					loader: 'json-loader'
 				},
 				{
 					// Images and other shenaniganiganidingdongs
 					test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf)(\?.*)?$/,
-					loader: 'url',
+					loader: 'url-loader',
 					query: {
 						limit: 10000,
 						name: prod ? '[name].[hash:7].[ext]' : '[name].[ext]'
